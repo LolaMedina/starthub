@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="stylesheets/header.css">
+    <script src="https://use.fontawesome.com/8271394595.js"></script>
+    <title>Upload a Project</title>
+</head>
+
+<body>
+    <!-- Nav-BAR -->
+    <nav class="nav-bar">
+        <span class="navbar-toggle" id="togglejs-navbar">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </span>
+        <a href="index.html" class="logo"><img src="https://res.cloudinary.com/lolamedina/image/upload/v1590507302/StartHubnG/dami_mghldi.png" alt="" width="100%"></a>
+        <ul class="main-nav" id="nav-menu">
+            <li>
+                <a href="index.html" class="nav-links">Home</a>
+            </li>
+            <li>
+                <a href="#" class="nav-links dropdown">Explore<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                <div class="dropdown-content hide">
+                    <a href="#" class="nav-links">Discover</a>
+                    <a href="project.html" class="nav-links">Projects</a>
+                </div>
+            </li>
+            <li>
+                <a href="submission-page.html" class="nav-links">Upload Project</a></li>
+            <li>
+                <a href="contact.html" class="nav-links">Contact</a>
+            </li>
+            <li>
+                <a href="login.html" class="nav-links">Login</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- FORM -->
+    <div class="main">
+        <div class="side-bar">
+        </div>
+        <div class="form-div">
+            <div class="heading">
+                <h2>Submit a Project</h2>
+                <h5>Share your work with millions of people around the world!</h5>
+            </div>
+            <form  name="submission"  id='submission'action="/project" method="POST" onsubmit= "return validateForm()">
+                <div>
+                    <label for="firstName">First Name</label><br>
+                    <input type="text" name="firstName" id="firstName" class="input" >
+                    <small class="error" id="fNameErr"></small>
+                </div>
+
+                <div>
+                    <label for="lastName">Last Name</label><br>
+                    <input type="text" name="lastName" id="internId" class="input" >
+                    <small class="error" id="lNameErr"></small>
+                </div>
+                <div>
+                    <label for="startYear">StartNG year</label><br>
+                    <input type="text" name="startYear" id="startYear" class="input">
+                    <small class="error" id="yearErr"></small>
+                </div>
+
+                <div>
+                    <label for="slackId">Slack Username</label><br>
+                    <input type="text" name="slackId" id="internId" class="input">
+                    <small class="error" id="slackErr"></small>
+                </div>
+
+                <div>
+                    <label for="email"> Email</label> <br>
+                    <input type="email" name="email" id="email" class="input">
+                    <small class="error" id="emailErr"></small>
+                </div>
+                <div>
+                    <label for="phoneNumber"> Phone Number</label>
+                    <input type="number" name="phoneNumber" id="phoneNumber" class="input">
+                    <small class="error" id="numberErr"></small>
+                </div>
+
+                <div>
+                    <label for="gitHub">GitHub Username</label>
+                    <input type="text" name="gitHub" id="gitHub" class="input" >
+                    <small class="error" id="gitHubErr"></small>
+                </div>
+                <div>
+                    <label for="twitter">Twitter</label>
+                    <input type="text" name="twitter" class="input" id="twitter" placeholder="This is optional but important">
+                </div>
+                <div>
+                    <label for="linkendIn">LinkedIn</label>
+                    <input type="text" name="LinkedIn" class="input" id="linkendIn" placeholder="This is optional but important">
+                </div>
+
+                <div>
+                    <label for="occupation"> What's your role?</label>
+                    <select name="occupation" id="occupation">
+                        <option value="0">Select</option>
+                        <option value="1" id="devTrack">Developer</option>
+                        <option value="2" id="designTrack">Designer</option>
+                        <small class="error" id="occupationErr"></small>
+                    </select>
+                    
+                </div>
+
+                <div>
+                    <label for="projectTitle">Project Title</label>
+                    <input type="text" name="projectTitle" class="input input.click" id="projectTitle" >
+                    <small class="error" id="titleErr"></small>
+                </div>
+
+                <div>
+                    <label for="projectUrl">Project URL</label>
+                    <input type="url" name="projectUrl" class="input" id="projectUrl" required>
+                    <small class="error" id="linkErr"></small>
+                </div>
+
+                
+                    <label for="projectImg">Project Image</label>
+                    <input type="file" name="projectImg" class="input" id="projectImg" accept="image/*" required>
+
+                
+
+                <div>
+                    <label for="projectType">Project Type</label>
+                    <select name="projectType" id="projectType">
+                        <option value="0" default>Select</option>
+                        <option value="1" id="webProject">Web</option>
+                        <option value="2" id="mobileProject">Mobile</option>
+                        <option value="3" id="designProject">UI/UX</option>
+                        <small class="error" id="typeErr"></small>
+                    </select>
+                </div>
+
+                <div>
+                <label for="projectDesc">Brief Project Description</label><br>
+                <textarea name="projectDesc" id="projectDesc" cols="10" rows="5" maxlength="100"  required>
+                </textarea>
+                <small class="hide" id="descErr"></small>
+                </div>
+
+                <button type="submit" id="submitBtn">Submit</button>
+            </form>
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="contain">
+        <div class="col">
+          <h1>Company</h1>
+          <ul>
+            <li>About</li>
+            <li>Mission</li>
+            <li>Services</li>
+            <li>Social</li>
+            <li>Get in touch</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h1>Products</h1>
+          <ul>
+            <li>About</li>
+            <li>Mission</li>
+            <li>Services</li>
+            <li>Social</li>
+            <li>Get in touch</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h1>Accounts</h1>
+          <ul>
+            <li>About</li>
+            <li>Mission</li>
+            <li>Services</li>
+            <li>Social</li>
+            <li>Get in touch</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h1>Resources</h1>
+          <ul>
+            <li>Webmail</li>
+            <li>Redeem code</li>
+            <li>WHOIS lookup</li>
+            <li>Site map</li>
+            <li>Web templates</li>
+            <li>Email templates</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h1>Support</h1>
+          <ul>
+            <li>Contact us</li>
+            <li>Web chat</li>
+            <li>Open ticket</li>
+          </ul>
+        </div>
+        <div class="col social">
+          <h1>Social</h1>
+          <ul>
+            <li><img src="https://svgshare.com/i/5fq.svg" width="32" style="width: 32px;"></li>
+            <li><img src="https://svgshare.com/i/5eA.svg" width="32" style="width: 32px;"></li>
+            <li><img src="https://svgshare.com/i/5f_.svg" width="32" style="width: 32px;"></li>
+          </ul>
+        </div>
+      <div class="clearfix"></div>
+      </div>
+      </div>
+      <!-- END OF FOOTER -->
+    <script src="script.js"></script>
+    <script src="javascript/header.js"></script>
+</body>
+</html>
